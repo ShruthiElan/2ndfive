@@ -1,0 +1,50 @@
+1.a cluster and a hadoop cluster
+CLUSTER
+A cluster is like a datacenter.
+it is the single point of storage.
+Mostly, each cluster stores specific data.
+There is no replication of data in a singke cluster.
+so,it is a single point of failure.
+if data in the cluster is lost there is no backup for that data.
+HADOOP CLUSTER
+In a hadoop cluster, unstructured data can be stored.
+multiple copies of data are stored in various clusters.
+so even if a cluster fails,we have backup for that data.
+the hadoop clusters are distributed across various systems and information can be accessed from any of them.
+large amount of data can be stored and the processing is very fast compared to cluster.
+
+2.COMPONENTS OF HADOOP 1.X
+COMPONENTS OF HADOOP 1.X
+ The components are
+ 1.namenode
+2.datanode
+3.job tracker
+4.task tracker
+
+NAME NODE
+It consists of the metadata of files and the hadoop filesystem tree.
+It contains of details of which block is stored in which data node.
+There can be only one name node.
+It acts like the master node.
+It does not store any data.
+If the name node fails the entire cluster fails.
+SECONDARY NAMENODE
+It performs checkpoints on the metadata in namenode. 
+It does not act as a name node even if name node fails.
+It just helps the name nodes. 
+DATANODE
+It stores the actual data of the hadoop filesystem.
+It notifies the name of the data it holds
+It signals name nodes when it starts processing its data.
+The signals are sent often to indicate it is active.
+Those signals are known as heartbeat.
+It acts like the slave.
+It performs the works assigned to it from the name node.
+JOBTRACKER
+It controls the execution of map reduce jobs.
+TASKTRACKER
+It runs individual map-reduce jobs on datanodes.
+Periodically communicates with the jobtracker to give updates and receive instructions.
+
+
+ 
